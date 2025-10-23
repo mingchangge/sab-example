@@ -1,8 +1,10 @@
 # 使用 Python 内置的服务器
 
-如果你的电脑上安装了 Python 3，使用`python3 server.py`命令启动服务器。
+如果你的电脑上安装了 Python 3，使用 `python3 server.py` 命令启动服务器。
 
-# 使用 Node.js 内置的服务器（我本地已经安装了python3，这里只介绍使用 Node.js 内置的服务器使用）
+# 使用 Node.js 内置的服务器
+
+我本地已经安装了python3，这里只介绍使用 Node.js 内置的服务器使用方法。
 
 1. 安装命令：
    ```bash
