@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SharedArrayBuffer 示例</title>
+    </head>
+
+    <body>
+        <h1>SharedArrayBuffer (SAB) 示例</h1>
+        <p>SharedArrayBuffer 是一种特殊的数组缓冲区，它可以在多个线程之间共享数据。</p>
+        <p>在本示例中，我们将创建一个 SharedArrayBuffer，并在两个不同的线程中共享它。</p>
+        <p>我们将在一个线程中修改 SharedArrayBuffer 中的数据，然后在另一个线程中读取它。</p>
+        <p>请打开浏览器的开发者控制台查看输出。</p>
+
+        <script type="module" charset="utf-8">
+            import {
+                SharedArrayBufferExample,
+                SharedArrayBufferAtomicsExample,
+                SharedArrayBufferAtomicsExample2
+            } from './main.js';
+            /*
+            * SharedArrayBuffer 示例:
+            */
+            // SharedArrayBufferExample(); 
+            /*
+            * SharedArrayBuffer + Atomics 示例:
+            * 因为 Atomics.wait 只能在 Worker 线程中使用，所以我们需要对示例进行一些修改。
+            * 第一个示例（SharedArrayBufferAtomicsExample）使用setTimeout轮询模式替换错误的while循环和Atomics.wait
+            * 第二个示例（SharedArrayBufferAtomicsExample2）让最后一个完成任务的 Worker 线程，通过 postMessage() 发送一个消息来通知主线程“我们都完成了”。
+            */
+            // SharedArrayBufferAtomicsExample();
+            SharedArrayBufferAtomicsExample2();
+        </script>
+    </body>
+</html>
