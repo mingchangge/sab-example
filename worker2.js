@@ -15,6 +15,7 @@ self.onmessage = ({ data }) => {
     console.log('[Worker 2] 所有工作线程递增操作完成。');
     // 完成任务后,原子递增已完成任务的 Worker 数量
     const previousFinishedCount = Atomics.add(int32Array, 2, 1);
+    console.log(`【Worker_${workerId}】 已完成 ${previousFinishedCount + 1} 个工作线程的递增操作。`);
     // 检查是否所有 Worker 都已完成
     if (previousFinishedCount === numWorkers - 1) {
         console.log('[Worker 2] 我是最后一个完成的，正在通知主线程！');
